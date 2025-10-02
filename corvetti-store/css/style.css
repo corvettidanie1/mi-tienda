@@ -1,0 +1,230 @@
+:root {
+  --navy: #272525;
+  --cream: #bebebe;
+  --gold: #ffffff;
+  --soft-gray: #000000;
+  --text: #000000;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(15, 23, 48, 0.5);
+  color: white;
+  text-align: center;
+}
+.hero-overlay h1 {
+  font-size: 48px;
+  margin: 10px 0;
+  font-family: Georgia, serif;
+}
+.hero-overlay p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.hero-overlay .btn {
+  background: linear-gradient(90deg, var(--gold), #f8eec7);
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: bold;
+}
+
+/* Catálogo */
+.catalogo {
+  padding: 60px 20px;
+  text-align: center;
+}
+.catalogo h2 {
+  font-size: 32px;
+  color: var(--navy);
+  margin-bottom: 40px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.producto {
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.producto:hover {
+  transform: translateY(-8px);
+}
+.producto img {
+  width: 100%;
+  border-radius: 12px;
+}
+.precio {
+  font-weight: bold;
+  color: var(--navy);
+}
+.ver-detalle {
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  background: var(--navy);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: slideIn 0.4s ease;
+}
+@keyframes slideIn {
+  from {transform: translateY(-40px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+.cerrar {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+}
+.modelos {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+.color-opcion {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.form-pedido {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-pedido input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.btn-pedir {
+  background: linear-gradient(90deg, var(--gold), #f2e4b9);
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Contacto */
+.contacto {
+  padding: 40px 20px;
+  background: var(--navy);
+  text-align: center;
+  color: white;
+}
+.contacto h2 {
+  margin-bottom: 20px;
+}
+.iconos img {
+  width: 36px;
+  margin: 0 10px;
+  filter: invert(1);
+}
+
+/* Footer */
+.site-footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 14px;
+}
+.precio-original {
+  color: #888; /* gris suave elegante */
+  text-decoration: line-through; /* la rayita encima */
+  font-size: 14px;
+  margin: 0;
+}
+
+.precio {
+  color: #000000; /* dorado elegante */
+  font-size: 18px;
+  font-weight: bold;
+  margin: 4px 0 12px;
+}
+
+/* ---------------------- */
+/* ESTILOS DE DESCUENTOS */
+/* ---------------------- */
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.img-container img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.descuento {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #000000; /* rojo elegante */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.producto .descripcion {
+  font-size: 0.60rem;   /* más pequeño */
+  color: #666;          /* gris plomo */
+  margin: 5px 0 10px;   /* espacio arriba y abajo */
+  line-height: 1.4;     /* más cómodo de leer */
+}
